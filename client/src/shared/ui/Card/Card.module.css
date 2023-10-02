@@ -1,0 +1,10 @@
+.card {
+  position: relative;
+  display: block;
+  
+  max-width: 21.25rem;
+  padding: 1rem;
+
+  border: 1px solid var(--secondary-color-darker);
+  border-radius: .5rem;
+}
