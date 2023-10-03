@@ -1,1 +1,0 @@
-export { store, action } from './store'

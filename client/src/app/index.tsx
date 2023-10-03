@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import { lazily } from 'react-lazily'
-
+import { Provider } from 'react-redux'
 
 import { MainLayout } from './layouts/main'
+import { store } from './store'
 
 const {
   ProjectsPage,
@@ -11,11 +12,13 @@ const {
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path='/' element={<MainLayout />}>
-        <Route path='/' element={<ProjectsPage />}></Route>
-        <Route path=':projectId' element={<TaskListPage />}></Route>
-      </Route>
-    </Routes>
+    <Provider store={store}>
+      <Routes>
+        <Route path='/' element={<MainLayout />}>
+          <Route path='/' element={<ProjectsPage />}></Route>
+          <Route path=':projectId' element={<TaskListPage />}></Route>
+        </Route>
+      </Routes>
+    </Provider>
   )
 }
