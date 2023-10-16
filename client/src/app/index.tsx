@@ -16,7 +16,7 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route path='/' element={<ProjectsPage />}></Route>
-          <Route path=':projectId' element={<TaskListPage />}></Route>
+          <Route path='project/:projectId' element={<TaskListPage />}></Route>
         </Route>
       </Routes>
     </Provider>

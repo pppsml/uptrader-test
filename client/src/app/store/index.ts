@@ -1,13 +1,15 @@
 import { applyMiddleware, combineReducers, compose, legacy_createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
-import { projectsReducer } from '@/entities/project'
+import { projectReducer } from '@/entities/project'
+import { taskReducer } from '@/entities/task';
 import { rootSaga } from './sagas'
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  projects: projectsReducer,
+  projects: projectReducer,
+  tasks: taskReducer,
 })
 
 const sagaMiddleware = createSagaMiddleware()

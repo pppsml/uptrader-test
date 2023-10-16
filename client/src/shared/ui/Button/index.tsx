@@ -5,6 +5,7 @@ import classes from './Button.module.css'
 const ButtonVariants = {
   filled: classes.filled,
   subtle: classes.subtle,
+  outline: classes.outline,
 }
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +13,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
 }
 
-export const Button = ({ className, variant, children, ...props }: Props) => {
+export const Button = ({ className, variant = 'filled', children, ...props }: Props) => {
 
   return (
     <button

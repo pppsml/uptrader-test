@@ -1,0 +1,12 @@
+.taskcard {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: .5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: .5rem;
+}

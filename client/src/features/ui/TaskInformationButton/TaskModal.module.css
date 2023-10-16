@@ -1,0 +1,48 @@
+.cols__container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(270px, 1fr));
+  grid-template-rows: 1fr;
+
+  overflow-y: hidden;
+}
+
+.cols__item {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  padding: .5rem;
+}
+
+.cols__item:not(:last-child) {
+  border-right: 1px solid var(--secondary-color-darker);
+}
+
+.text_label {
+  display: inline-block;
+  font-weight: 600;
+  margin-right: .2rem;
+  margin-bottom: .2rem;
+}
+
+.text {
+  display: inline-block;
+}
+
+.bottomButtons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border-color: red;
+  color: var(--primary-color);
+}
+
+.deleteButton:hover {
+  background-color: rgba(255, 0, 0, .1);
+  color: var(--primary-color);
+}

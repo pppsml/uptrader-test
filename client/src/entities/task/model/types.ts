@@ -1,17 +1,10 @@
-import { Comment } from '../comment'
+import { File } from '../../file';
+import { Comment } from '../../comment'
 
-enum STATUS {
-  QUEUE = 'queue',
-  DEV = 'dev',
-  DONE = 'done',
-}
+export type PriorityType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 
-
-type FileURIType = `${'http' | 'https'}://${string}`
-// todo? fix hardcode
-type PriorityType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
-
-interface Subtask {
+export interface Subtask {
+  id: number;
   text: string;
   isCompleted: boolean
 }
@@ -26,8 +19,8 @@ export interface Task {
   devTime: number; // number of seconds by dev status is disabled
   completedAt: number | null;
   priority: PriorityType;
-  files: FileURIType[];
-  status: STATUS;
+  files: File[];
+  status: 'queue' | 'dev' | 'done';
   subtasks: Subtask[]
   comments: Comment[]
 }

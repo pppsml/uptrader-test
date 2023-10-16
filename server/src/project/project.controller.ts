@@ -1,26 +1,30 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { ObjectId } from 'mongoose';
+import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common';
 
 import { ProjectService } from './project.service';
 import { CreateProjectDto } from './dto/create-project.dto';
-import { Project } from './project.schema';
+import { PopulatedProject, Project } from './project.schema';
 
 @Controller('project')
 export class ProjectController {
   constructor(private projectService: ProjectService) {}
 
   @Post('create')
-  async createProject(@Body() createProjectDto: CreateProjectDto): Promise<Project> {
-    return await this.projectService.createProject(createProjectDto)
+  async create(@Body() createProjectDto: CreateProjectDto): Promise<Project> {
+    return await this.projectService.create(createProjectDto)
   }
-
+  
   @Get('getall')
   async getAll(): Promise<Project[]> {
     return await this.projectService.getAll()
   }
+  
+  @Get('getone')
+  async getOne(@Query() query: { projectId?: string }): Promise<Project> {
+    return await this.projectService.getOne(query.projectId)
+  }
 
-  @Get('/:projectId')
-  async getOne(@Param('projectId') projectId: ObjectId): Promise<Project> {
-    return await this.projectService.getOne(projectId)
+  @Delete('delete')
+  async delete(@Query() query: { projectId?: string }): Promise<PopulatedProject> {
+    return await this.projectService.delete(query.projectId)
   }
 }

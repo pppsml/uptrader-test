@@ -1,11 +1,12 @@
-
+import { TaskList } from '@/widgets/TaskList'
+import { Container } from "@/shared/ui"
 
 export const TaskListPage = () => {
 
 
   return (
-    <>
-      TaskListPage
-    </>
+    <Container>
+      <TaskList />
+    </Container>
   )
 }

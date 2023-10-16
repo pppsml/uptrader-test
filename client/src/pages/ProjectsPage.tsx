@@ -1,8 +1,11 @@
-import { ProjectsList } from '@/widgets/ProjectsList/ui'
+import { ProjectList } from '@/widgets/ProjectList'
+import { Container } from '@/shared/ui'
 
 export const ProjectsPage = () => {
 
   return (
-    <ProjectsList />
+    <Container>
+      <ProjectList />
+    </Container>
   )
 }

@@ -3,25 +3,34 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0 .125rem;
+  padding: 0 .5rem;
   height: 1.75rem;
   min-width: 1.75rem;
-  width: min-content;
 
-  border: none;
+  border: 2px solid transparent;
   border-radius: 4px;
   background-color: transparent;
   color: var(--primary-color);
+  font-weight: 500;
   cursor: pointer;
 }
 
 .button:focus {
-  outline: 2px solid var(--primary-color);
+  outline: 1px solid var(--primary-color);
+}
+
+.button:disabled {
+  cursor: not-allowed;
 }
 
 .filled {
   background-color: var(--primary-color);
   color: var(--secondary-color)
+}
+
+.filled:hover {
+  background-color: var(--primary-color);
+  color: #fff
 }
 
 .subtle {
@@ -31,4 +40,14 @@
 
 .subtle:hover {
   background-color: rgba(var(--primary-color-torgb), .3);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--primary-color);
+}
+
+.outline:hover {
+  background-color: rgba(var(--primary-color-torgb), .1);
+  border-color: var(--primary-color);
 }

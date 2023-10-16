@@ -1,2 +1,5 @@
 declare type RootState = ReturnType<typeof import("./store").store.getState>;
-declare type RootDispatch = typeof import("./store").store.dispatch;
+declare type RootDispatch = import("redux").Dispatch<
+  | import('@/entities/task').DispatchTaskActions
+  | import('@/entities/project').DispatchProjectActions12
+>;
